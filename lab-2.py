@@ -1,7 +1,6 @@
 
-operations_count = 0
-
 def main():
+    operations_count = 0
     ask_again = True
     while(ask_again):
         a = input("Enter the numerator: ")
@@ -21,8 +20,10 @@ def perform_division(a,b):
     try:
         operations_count += 1
         return int(a)/int(b)
-    except Exception as e:
-        pass
+    except ZeroDivisionError as error:
+        print("Looks like you are trying to divide by zero! This is not possible.")
+    except Exception  as e:
+        print("Invalid numbers.")
 
 
 main()
